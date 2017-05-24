@@ -43,9 +43,9 @@ lalapps_inspinj \
 to create an example xml file. Use this as the -i option for the script you just created. For example,
 python pycbc_add_to_siminspiral_table.py -i OUTPUT_FILE.xml -o new_output_file.xml 
 Open the new_output_file.xml and make sure you see your parameters have been added to the columns of existing parameters, for example: 
-                <Column Type="real_4" Name="sim_inspiral:lambda1"/>
-                <Column Type="real_4" Name="sim_inspiral:lambda2"/>
-                <Column Type="int_4s" Name="sim_inspiral:tidal_order"/>
+'<Column Type="real_4" Name="sim_inspiral:lambda1"/>'
+'<Column Type="real_4" Name="sim_inspiral:lambda2"/>'
+'<Column Type="int_4s" Name="sim_inspiral:tidal_order"/>'
 and that the values you specified in the script are there. If this is working lets go to step 4.
 
 4) To give a very short overview of what needs doing. Here is the codethat is used to create the "banksim" workflow:

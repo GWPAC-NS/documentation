@@ -1,5 +1,5 @@
 # documentation
-This is an outline on the process of adding a new parameter to the input waveforms when running a banksims as well as creating the workflow and submitting the job. For this I’m going to assume you have a working version of lawsuit already set up, the instructions for which can be found at
+This is an outline on the process of adding a new parameter to the input waveforms when running a banksims as well as creating the workflow and submitting the job. For this I’m going to assume you have a working version of lalsuite already set up, the instructions for which can be found at
 
 http://ligo-cbc.github.io/pycbc/latest/html/install.html#installing-lalsuite-into-a-virtual-environment.  
 Be sure you have a working version of lalsuite installed in a virtual environment before continuing. All instructions assume you are in this environment.

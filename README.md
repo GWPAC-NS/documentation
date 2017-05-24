@@ -50,25 +50,25 @@ and that the values you specified in the script are there. If this is working le
 
 4) To give a very short overview of what needs doing. Here is the codethat is used to create the "banksim" workflow:
 
- https://github.com/ligo-cbc/pycbc/blob/master/bin/workflows/pycbc_create_bank_verifier_workflow
+  https://github.com/ligo-cbc/pycbc/blob/master/bin/workflows/pycbc_create_bank_verifier_workflow
 
- Each executable that it runs is declared as a class at the top e.g.:
+  Each executable that it runs is declared as a class at the top e.g.:
 
- https://github.com/ligo-cbc/pycbc/blob/master/bin/workflows/pycbc_create_bank_verifier_workflow#L46
+  https://github.com/ligo-cbc/pycbc/blob/master/bin/workflows/pycbc_create_bank_verifier_workflow#L46
 
- A new entry would need to be added here for the new code.
+  A new entry would need to be added here for the new code.
 
- Then the function here:
+  Then the function here:
 
- https://github.com/ligo-cbc/pycbc/blob/master/bin/workflows/pycbc_create_bank_verifier_workflow#L189
+  https://github.com/ligo-cbc/pycbc/blob/master/bin/workflows/pycbc_create_bank_verifier_workflow#L189
 
- Is responsible for running a specific set of injections. After this
+  Is responsible for running a specific set of injections. After this
  line the injection file is handed off to the actual banksim code:
 
- https://github.com/ligo-cbc/pycbc/blob/master/bin/workflows/pycbc_create_bank_verifier_workflow#L196
+  https://github.com/ligo-cbc/pycbc/blob/master/bin/workflows/pycbc_create_bank_verifier_workflow#L196
 
- so between lines 196 and 197 we would need to add a call to the new executable and then replace inj_file with the new inj_file which would be made by adding the new executable in place. 
- HOWEVER, I’ve created a patch to implement the implied changes so you shouldn’t need to do much. Before you do anything though make sure your python scrip from step 2 is called add_to_siminspiral_table.py. Download the patch here  https://github.com/torreycullen/pycbc/blob/master/bin/0001-Changes-to-run-add_to_siminspiral_table-in-banksim.patch. A link to applying a patch in git is here https://www.devroom.io/2009/10/26/how-to-create-and-apply-a-patch-with-git/. Download and apply the patch, if you want to see the actual changes that will be made they are here https://github.com/torreycullen/pycbc/commit/5b5d3162955ee96e977828992b368910e101b85e. 
+  so between lines 196 and 197 we would need to add a call to the new executable and then replace inj_file with the new   inj_file which would be made by adding the new executable in place. 
+  HOWEVER, I’ve created a patch to implement the implied changes so you shouldn’t need to do much. Before you do anything   though make sure your python scrip from step 2 is called add_to_siminspiral_table.py. Download the patch here  https://github.com/torreycullen/pycbc/blob/master/bin/0001-Changes-to-run-add_to_siminspiral_table-in-banksim.patch. A link  to applying a patch in git is here https://www.devroom.io/2009/10/26/how-to-create-and-apply-a-patch-with-git/. Download and apply the patch, if you want to see the actual changes that will be made they are here https://github.com/torreycullen/pycbc/commit/5b5d3162955ee96e977828992b368910e101b85e. 
 
 5) After this we just need to install your forked version of pycbc and pycbc-glue. Using this link http://ligo-cbc.github.io/pycbc/latest/html/install.html#installing-source-from-github-for-development (the main command being pip install -e git+git@github.com:your-username-here/pycbc.git#egg=pycbc changing the path where necessary). Next install your edited version of pycbc-glue by following these instructions https://ligo-cbc.github.io/pycbc/latest/html/install.html#modifying-pycbc-glue. 
 

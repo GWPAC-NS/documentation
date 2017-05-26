@@ -82,5 +82,4 @@ And that’s it!
 Other notes:
 One problem I found during this process that you may encounter depending what cluster you are working on, is that while installing pycbc it updates scipy to version 0.19.0. Some processes for this framework to work correctly require a version not as up to date as this (something about moving spicy.weave into a different library). A version that should be working correctly is 0.12.1. To download this version of scipy run the following commands:
 
-pip uninstall scipy
-pip install scipy==0.12.1
+pip install scipy=='0.12.1'
